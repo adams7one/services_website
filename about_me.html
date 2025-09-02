@@ -2,52 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>About Me | S7ONE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | S7One</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Learn about Adam and S7ONE — offering web design, audits, and digital coaching.">
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="menu-toggle">&#9776;</div>
+      <a href="index.html" class="logo">S7ONE</a>
+      <button class="menu-toggle">☰</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="about_me.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="#" id="contactBtn">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="content">
+  <main class="page-content">
     <h1>About Me</h1>
-    <p>Hi, I’m Adam from S7One. I help businesses establish a strong online presence with modern websites, insightful audits, and coaching that drives growth.</p>
+    <p>Hi, I’m Adam. I created S7ONE to provide digital solutions for individuals and businesses who want to build a strong online presence. With experience in web design, audits, and coaching, I combine creativity with strategy to help you grow sustainably.</p>
   </main>
 
-  <div class="sticky-cta">
-    <a href="#" id="contactBtnSticky" class="btn">Contact Me</a>
-  </div>
-
-  <!-- Contact Modal -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/yourFormID" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" required>
-
-        <label for="email">Email</label>
-        <input type="email" name="email" required>
-
-        <label for="message">Message</label>
-        <textarea name="message" required></textarea>
-
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </div>
+  <footer>
+    <p>&copy; 2025 S7ONE. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
