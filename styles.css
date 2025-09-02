@@ -42,7 +42,7 @@ header {
   font-size: 1.2rem;
   font-weight: 800;
   text-decoration: none;
-  color: #0077ff;
+  color: #333;
 }
 
 /* Nav links */
@@ -180,10 +180,13 @@ header {
    Buttons
 ------------------- */
 .btn {
-  display: inline-block;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
   border-radius: 8px;
-  padding: 1rem 2rem;
+  padding: 0.9rem 2rem;     /* Consistent padding */
+  min-height: 48px;         /* Forces equal height */
   font-size: 1rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
@@ -191,6 +194,7 @@ header {
   transition: all 0.3s ease;
   text-align: center;
   text-decoration: none;
+  line-height: 1.2;
 }
 
 .btn-primary {
@@ -205,9 +209,21 @@ header {
 }
 
 .btn-secondary {
+  align-self: center; 
   background: #f1f5ff;
   color: #0077ff;
   border: 2px solid #0077ff;
+}
+
+@media (max-width: 768px) {
+  /* Center-align only secondary CTAs that are NOT inside the hero */
+  .btn-secondary:not(.hero-ctas .btn-secondary) {
+    display: block;
+    margin: 1.5rem auto;   /* space above and below, centered horizontally */
+    text-align: center;
+    width: fit-content;
+    max-width: 100%;
+  }
 }
 
 .btn-secondary:hover {
@@ -218,22 +234,29 @@ header {
 /* -------------------
    Sticky CTA
 ------------------- */
+/* Sticky CTA Container */
 .sticky-cta {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
+  left: 0;
+  width: 100%;                  /* full width */
+  background: #fff;              /* white background bar */
+  padding: 1rem;
+  text-align: center;            /* center align button */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow above */
   z-index: 1100;
 }
 
-.sticky-cta.btn-primary {
-  min-width: 170px;
+/* Button inside container */
+.sticky-cta .btn-primary {
+  min-width: 180px;
 }
 
 /* -------------------
    Sections
 ------------------- */
 .section {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
 }
 
 .section.light {
@@ -247,6 +270,10 @@ header {
 .section-inner {
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.section h2 {
+  margin-bottom: 1.25rem; /* increase space below h2 */
 }
 
 /* -------------------
@@ -400,4 +427,232 @@ footer {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Services Grid: 2x2 layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* mobile: 1 column */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* tablet/desktop: 2 columns */
+  }
+}
+
+/* Service cards + icons */
+.service-card {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 1.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  height: 100%;
+}
+
+.service-card .icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: .25rem;
+}
+
+.service-card .icon img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.service-card p {
+  color: #555;
+}
+
+
+/* Problems & Solutions Table */
+.problems-solutions {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.problems-solutions th,
+.problems-solutions td {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.problems-solutions thead {
+  background: #004aad;
+  color: #fff;
+  font-weight: 600;
+}
+
+.problems-solutions tbody tr {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.problems-solutions tbody tr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.problems-solutions tbody tr:nth-child(even) {
+  background: linear-gradient(180deg, #fdfdfd 0%, #f5f9ff 100%);
+}
+
+/* --- Mobile view --- */
+@media (max-width: 768px) {
+  .problems-solutions thead {
+    display: none;
+  }
+
+  .problems-solutions,
+  .problems-solutions tbody,
+  .problems-solutions tr,
+  .problems-solutions td {
+    display: block;
+    width: 100%;
+  }
+
+  .problems-solutions tr {
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Problem cell */
+  .problems-solutions td:first-child {
+    background: #f0f0f0;
+    font-weight: 700;
+    padding: 1rem;
+  }
+
+  /* Solution cell */
+  .problems-solutions td:last-child {
+    background: #ffffff;
+    font-style: italic;
+    padding: 1rem;
+  }
+}
+
+
+
+
+
+
+/* Hero CTAs */
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hero-ctas .btn {
+  flex: 1;                 /* equal width */
+  text-align: center;
+}
+
+/* Stack neatly on mobile */
+@media (max-width: 768px) {
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 320px;      /* keeps a nice size */
+  }
+}
+
+.audit-banner {
+  background: linear-gradient(135deg, #0077ff, #005fcc);
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 0; /* keep it full block like other sections */
+}
+
+.audit-banner h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.audit-banner p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.audit-banner .btn {
+  background: #fff;
+  color: #0077ff;
+  font-weight: 700;
+  border: none;
+}
+
+.audit-banner .btn:hover {
+  background: #f1f5ff;
+  color: #005fcc;
+}
+
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.testimonial-card p {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.testimonial-card h4 {
+  font-weight: 700;
+  color: #0077ff;
+  font-size: 1rem;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: #0077ff;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  opacity: 0.2;
+  pointer-events: none;
 }

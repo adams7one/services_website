@@ -29,3 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+  document.getElementById("openAuditModal").addEventListener("click", function() {
+    document.querySelector(".modal").style.display = "flex";
+  });

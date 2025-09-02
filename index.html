@@ -28,48 +28,33 @@
   </header>
 
   <!-- Sticky CTA -->
-  <button class="btn btn-primary sticky-cta open-modal">Contact Me</button>
+  <div class="sticky-cta">
+  <button class="btn btn-primary open-modal">Get in touch today 🚀</button>
+</div>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <h1>Digital Services That Empower Your Business</h1>
-        <p>Websites, audits, and coaching designed to help you grow.</p>
-        <button class="btn btn-primary open-modal">Contact Me</button>
-      </div>
-      <div class="hero-image">
-        <!-- Keep ONE image, and make sure the file exists in /images/ -->
-        <img src="images/hero_illustration.svg" alt="Digital services illustration" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="section light">
-    <div class="section-inner">
-      <h2>What I Offer</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Website Creation</h3>
-          <p>Modern, mobile-friendly websites tailored to your brand.</p>
-        </div>
-        <div class="card">
-          <h3>Website Audits</h3>
-          <p>Comprehensive audits to optimize performance and SEO.</p>
-        </div>
-        <div class="card">
-          <h3>Business Coaching</h3>
-          <p>Practical coaching to scale your digital presence effectively.</p>
-        </div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Make your business work online</h1>
+      <p>From websites to marketing to data insights, everything can feel overwhelming. With proven experience from the UK’s top tech companies, you’ll get clear solutions that actually work.</p>
+      
+      <div class="hero-ctas">
+        <a href="#audit" class="btn btn-primary">Get a free website audit</a>
+        <a href="#services" class="btn btn-secondary">See services</a>
       </div>
     </div>
-  </section>
 
-  <!-- About Preview -->
+    <div class="hero-image">
+      <img src="images/hero-illustration.svg" alt="Digital growth illustration">
+    </div>
+  </div>
+</section>
+
+<!-- About Preview -->
 <section class="section about-section">
   <div class="section-inner">
-    <h2>About Me</h2>
+    <h2>Experience You Can Trust</h2>
     <div class="about-grid">
       <!-- Profile Photo -->
       <div class="about-photo">
@@ -79,29 +64,110 @@
       <!-- Bio + Logos -->
       <div class="about-text">
         <p>
-          I’m passionate about helping businesses succeed online with clean design, 
-          strategy, and modern digital tools. Over the years, I’ve worked with leading 
-          companies across tech and finance, delivering impactful digital solutions.
+          I'm Adam 👋 Over the past decade I’ve worked with some of the UK’s most recognisable digital brands including — Zoopla, Monzo, and John Lewis Money. 
+          From product strategy to data infrastructure, from marketing optimisation to scaling customer-facing websites, I’ve seen what works at scale. 
+          Now I bring that experience to small business owners and ambitious individuals.
         </p>
         <div class="company-logos">
           <img src="images/logo-zoopla.png" alt="Zoopla" />
           <img src="images/logo-monzo.png" alt="Monzo" />
           <img src="images/logo-johnlewis.png" alt="John Lewis Money" />
         </div>
-        <a href="about_me.html" class="btn btn-secondary">Learn More</a>
+        <a href="about_me.html" class="btn btn-secondary">Read My Story</a>
       </div>
     </div>
   </div>
 </section>
 
-  <!-- Contact CTA -->
-  <section class="section light">
-    <div class="section-inner">
-      <h2>Ready to Get Started?</h2>
-      <p>Let’s work together to take your business to the next level.</p>
-      <button class="btn btn-secondary">Contact Me</button>
+<!-- Services Section -->
+<section id="services" class="section light">
+  <div class="section-inner">
+    <h2>What I can help with...</h2>
+    <table class="problems-solutions">
+      <thead>
+        <tr>
+          <th>Problem</th>
+          <th>Solution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Problem"> Website looks outdated or isn’t mobile-friendly</td>
+          <td data-label="Solution"> A modern, fast, and mobile-friendly website that works seamlessly across devices</td>
+        </tr>
+        <tr>
+          <td data-label="Problem"> Not showing up on Google searches</td>
+          <td data-label="Solution">SEO improvements that help your business get found by local customers</td>
+        </tr>
+        <tr>
+          <td data-label="Problem"> Need to take bookings or payments online</td>
+          <td data-label="Solution">Simple, secure booking and payment systems integrated into your site</td>
+        </tr>
+        <tr>
+          <td data-label="Problem"> Advertising spend isn’t bringing results</td>
+          <td data-label="Solution">Optimised paid ads campaigns designed to bring in new customers cost-effectively</td>
+        </tr>
+        <tr>
+          <td data-label="Problem"> No clear view of how the business is performing online</td>
+          <td data-label="Solution">Simple dashboards and reports that make it easy to track sales and customer activity</td>
+        </tr>
+        <tr>
+          <td data-label="Problem"> Unsure how to grow digital skills</td>
+          <td data-label="Solution">1-on-1 mentorship and coaching to build confidence and improve digital know-how</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Free Audit Banner -->
+<div id="audit" class="audit-banner">
+  <p>
+    🚀 Want to grow online faster?  
+    <strong>Get a free website audit + action plan</strong> to boost your business.
+  </p>
+  <a href="#contact" class="btn btn-primary">Register for a free audit</a>
+</div>
+
+
+<!-- Testimonials Section -->
+<section class="section about-section" id="testimonials">
+  <div class="section-inner">
+    <h2 style="text-align:center; margin-bottom:2rem;">Results that make a difference</h2>
+    <div class="testimonials">
+      
+      <div class="testimonial-card">
+        <span class="quote-mark">“</span>
+        <p><em>Working with you completely transformed our online store. Our coffee bean sales are up, and customers keep telling us how much easier it is to shop now.</em></p>
+        <h4>— Sarah, Local Coffee Roasters</h4>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="quote-mark">“</span>
+        <p><em>Our bookings doubled after the new site launched. We never realized how much we were losing with the old design until now.</em></p>
+        <h4>— James, Fitness Studio Owner</h4>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="quote-mark">“</span>
+        <p><em>The free audit gave us quick wins, and the follow-up coaching helped us understand how to keep improving without feeling overwhelmed.</em></p>
+        <h4>— Emma, Small Business Founder</h4>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section class="section light">
+  <div class="section-inner">
+    <h2>Let’s Grow Your Business Together</h2>
+    <p>
+      Whether you need a brand-new site, better performance from your existing one, or help scaling your digital marketing — I can help.
+    </p>
+    <button class="btn btn-secondary open-modal">Get in touch today</button>
+  </div>
+</section>
 
   <footer>
     <p>&copy; 2025 S7ONE. All rights reserved.</p>
