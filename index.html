@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <title>S7ONE | Digital Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="S7ONE offers website creation, audits, and digital coaching services to help businesses thrive online.">
-  <link href="styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo">S7ONE</a>
       <button class="menu-toggle">☰</button>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about_me.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="#" id="contactBtn">Contact</a></li>
@@ -22,69 +22,76 @@
     </nav>
   </header>
 
+  <!-- Main -->
   <main>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-      <h1>Unlock Your Digital Potential</h1>
-      <p>Custom websites, audits, and business coaching to help you succeed online.</p>
-      <button class="cta" id="contactBtnHero">Contact Me</button>
+      <div class="section-inner">
+        <h1>Unlock Your Digital Potential</h1>
+        <p>Custom websites, audits, and business coaching to help you succeed online.</p>
+        <button class="cta" id="contactBtnHero">Contact Me</button>
+      </div>
     </section>
 
     <!-- About Preview -->
-    <section class="about-preview">
-      <h2>About Me</h2>
-      <p>I’m Adam, founder of S7ONE. I help individuals and businesses unlock their digital potential with creative, results-driven solutions.</p>
-      <a href="about_me.html" class="btn">Learn More</a>
+    <section class="section light">
+      <div class="section-inner">
+        <h2>About Me</h2>
+        <p>I’m Adam, founder of S7ONE. I help individuals and businesses unlock their digital potential with creative, results-driven solutions.</p>
+        <a href="about_me.html" class="btn">Learn More</a>
+      </div>
     </section>
 
     <!-- Services Preview -->
-    <section class="services-preview">
-      <h2>What I Offer</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Website Creation</h3>
-          <p>Modern, mobile-friendly websites built with performance in mind.</p>
+    <section class="section dark">
+      <div class="section-inner">
+        <h2>What I Offer</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Website Creation</h3>
+            <p>Modern, mobile-friendly websites built with performance in mind.</p>
+          </div>
+          <div class="card">
+            <h3>Website Audits</h3>
+            <p>Comprehensive audits to optimize your website’s performance, SEO, and security.</p>
+          </div>
+          <div class="card">
+            <h3>Coaching</h3>
+            <p>1:1 sessions to help you grow your product, brand, and business.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Website Audits</h3>
-          <p>Comprehensive audits to optimize your website’s performance, SEO, and security.</p>
-        </div>
-        <div class="card">
-          <h3>Coaching</h3>
-          <p>1:1 sessions to help you grow your product, brand, and business.</p>
-        </div>
+        <a href="services.html" class="btn">View All Services</a>
       </div>
-      <a href="services.html" class="btn">View All Services</a>
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
-      <h2>What Clients Say</h2>
-      <blockquote>"Adam’s coaching and web expertise transformed my business presence online!"</blockquote>
-      <cite>- Happy Client</cite>
+    <section class="section light">
+      <div class="section-inner">
+        <h2>What Clients Say</h2>
+        <blockquote>"Adam’s coaching and web expertise transformed my business presence online!"</blockquote>
+        <cite>- Happy Client</cite>
+      </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 S7ONE. All rights reserved.</p>
   </footer>
 
-  <!-- Sticky CTA -->
-  <button class="sticky-cta" id="contactBtnSticky">Contact Me</button>
-
-  <!-- Modal Contact Form -->
+  <!-- Modal -->
   <div id="contactModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Contact Me</h2>
-      <form id="contactForm" action="https://formspree.io/f/mnqezqvd" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Message:</label>
+        <textarea name="message" required></textarea>
         <button type="submit">Send</button>
-        <div id="spinner" class="spinner hidden"></div>
+        <div class="spinner" id="spinner"></div>
       </form>
-      <p id="formMessage"></p>
     </div>
   </div>
 

@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <title>About Me | S7ONE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about Adam and S7ONE — offering web design, audits, and digital coaching.">
-  <link href="styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -22,14 +21,35 @@
     </nav>
   </header>
 
-  <main class="page-content">
-    <h1>About Me</h1>
-    <p>Hi, I’m Adam. I created S7ONE to provide digital solutions for individuals and businesses who want to build a strong online presence. With experience in web design, audits, and coaching, I combine creativity with strategy to help you grow sustainably.</p>
+  <main>
+    <section class="section light">
+      <div class="section-inner">
+        <h1>About Me</h1>
+        <p>Hi, I’m Adam, the founder of S7ONE. I specialize in helping individuals and businesses establish a strong digital presence with modern websites, insightful audits, and personalized coaching.</p>
+        <p>My goal is to simplify digital transformation for you and provide tools that deliver real results.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 S7ONE. All rights reserved.</p>
   </footer>
+
+  <!-- Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Message:</label>
+        <textarea name="message" required></textarea>
+        <button type="submit">Send</button>
+        <div class="spinner" id="spinner"></div>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <title>Services | S7ONE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore S7ONE services including web creation, audits, and business coaching.">
-  <link href="styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -22,18 +21,47 @@
     </nav>
   </header>
 
-  <main class="page-content">
-    <h1>Services</h1>
-    <ul>
-      <li><strong>Website Creation:</strong> Modern, mobile-friendly websites tailored to your needs.</li>
-      <li><strong>Website Audits:</strong> Technical, SEO, and UX audits to boost your online presence.</li>
-      <li><strong>Coaching:</strong> Product and business coaching for growth and clarity.</li>
-    </ul>
+  <main>
+    <section class="section dark">
+      <div class="section-inner">
+        <h1>Services</h1>
+        <div class="cards">
+          <div class="card">
+            <h3>Website Creation</h3>
+            <p>Modern, mobile-friendly websites tailored to your brand and business goals.</p>
+          </div>
+          <div class="card">
+            <h3>Website Audits</h3>
+            <p>In-depth analysis to uncover performance, SEO, and UX improvements.</p>
+          </div>
+          <div class="card">
+            <h3>Coaching</h3>
+            <p>Personalized business and product coaching to help you grow confidently.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 S7ONE. All rights reserved.</p>
   </footer>
+
+  <!-- Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Message:</label>
+        <textarea name="message" required></textarea>
+        <button type="submit">Send</button>
+        <div class="spinner" id="spinner"></div>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
