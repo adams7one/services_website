@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About - S7ONE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>About – S7ONE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
-  <header>
+  <header class="site-header">
+    <button class="menu-toggle" aria-label="Open Menu" aria-controls="navMenu" aria-expanded="false">☰</button>
     <div class="logo">S7ONE</div>
-    <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
-    <nav class="nav-links">
+    <nav id="navMenu" class="nav-links" aria-hidden="true">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="about.html" class="active">About</a>
       <a href="services.html">Services</a>
       <a href="#" id="contactBtn">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section>
+    <section class="page-section">
       <h1>About Me</h1>
-      <p>Hi, I’m Adam. I help businesses create beautiful websites, improve online presence, and grow with digital strategies.</p>
+      <p>Hi, I’m Adam. I help businesses create modern websites, improve performance, and grow with practical strategy and coaching.</p>
     </section>
   </main>
 
   <button class="cta-button" id="stickyContactBtn">Contact Me</button>
 
-  <!-- Contact Modal (same as index.html) -->
-  <div class="modal" id="contactModal">
+  <!-- Modal (same as index) -->
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" style="display:none;">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Contact Me</h2>
+      <button class="close" aria-label="Close modal">&times;</button>
+      <h2 id="contactTitle">Contact Me</h2>
       <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
         <label>Name</label>
-        <input type="text" name="name" required>
+        <input type="text" name="name" required />
         <label>Email</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" required />
         <label>Message</label>
         <textarea name="message" required></textarea>
-        <button type="submit">Send</button>
-        <div class="spinner" id="spinner"></div>
+
+        <button type="submit" class="cta-btn">
+          <span class="btn-text">Send</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -50,6 +55,6 @@
     &copy; 2025 S7ONE
   </footer>
 
-  <script src="script.js"></script>
+  <script defer src="script.js?v=3"></script>
 </body>
 </html>
