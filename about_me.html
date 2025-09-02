@@ -21,25 +21,90 @@
     <a href="index.html" class="logo">S7ONE | Digital Services</a>
 
     <!-- Nav links -->
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about_me.html" class="active"></a>About Me</a></li>
-      <li><a href="services.html">Services</a></li>
-    </ul>
+<ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about_me.html" class="active">About Me</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="#" class="open-modal">Contact</a></li>
+</ul>
+
   </nav>
 </header>
 
-  <section class="section light">
-    <div class="section-inner">
-      <h1>About Me</h1>
-      <p>Hello! I’m Adam, founder of S7ONE. I specialize in creating websites, auditing existing platforms, and coaching entrepreneurs to achieve sustainable growth in their digital presence.</p>
+<section class="about-me">
+  <div class="about-container">
+    
+    <!-- Profile image -->
+    <div class="about-photo">
+      <img src="images/profile.png" alt="Adam Stone" />
     </div>
-  </section>
+
+    <!-- Bio and logos -->
+    <div class="about-text">
+      <h1>About Me</h1>
+      <p>
+        I’ve spent the last decade working in some of the UK’s most recognised digital businesses — including 
+        Zoopla, Monzo, and John Lewis Money. From building digital strategies to scaling websites and 
+        optimising marketing, I’ve seen first-hand what it takes to succeed in the digital age.
+      </p>
+      <p>
+        Now, I’m using that experience to help small business owners and ambitious individuals 
+        bring their businesses up to speed — so they’re not left behind as the world moves online.
+      </p>
+
+      <div class="company-logos">
+        <img src="images/logo-zoopla.png" alt="Zoopla" />
+        <img src="images/logo-monzo.png" alt="Monzo" />
+        <img src="images/logo-johnlewis.png" alt="John Lewis Money" />
+      </div>
+
+      <!-- Bullet points -->
+      <ul class="about-bullets">
+        <li><span class="icon">✅</span> 10+ years experience in digital strategy and growth</li>
+        <li><span class="icon">✅</span> Worked with top UK tech companies at scale</li>
+        <li><span class="icon">✅</span> Helping small businesses compete online</li>
+        <li><span class="icon">✅</span> Practical, no-jargon advice and mentorship</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Direct Contact Box -->
+  <div class="contact-me-direct">
+    <h3>Want to discuss your business?</h3>
+    <p>
+      I’d love to hear about your business and how I might be able to help.  
+      You can email me directly at:
+    </p>
+    <p class="email-link">
+      <a href="mailto:adam@s7one.co">adam@s7one.co</a>
+    </p>
+  </div>
+</section>
 
   <footer>
     <p>&copy; 2025 S7ONE. All rights reserved.</p>
   </footer>
+<!-- General Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" aria-label="Close Modal">&times;</span>
+    <h2>Get in touch ✉️</h2>
 
+    <form action="https://formspree.io/f/xrbaybba" method="POST" id="contactForm">
+      <input type="hidden" name="_subject" value="Contact Request from S7ONE Website" />
+
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <input type="phone" name="PhoneNumber" placeholder="Contact Number" required />
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+      <button type="submit" class="btn btn-primary">Send</button>
+      <div class="spinner"></div>
+    </form>
+
+    <div id="form-message" class="form-message" style="display:none;"></div>
+  </div>
+</div>
   <script src="script.js" defer></script>
 </body>
 </html>

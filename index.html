@@ -23,13 +23,14 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about_me.html">About Me</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="#" class="open-modal">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Sticky CTA -->
   <div class="sticky-cta">
-  <button class="btn btn-primary open-modal">Get in touch today 🚀</button>
+  <button class="btn btn-primary open-modal">Get in touch today</button>
 </div>
 
   <!-- Hero -->
@@ -40,7 +41,7 @@
       <p>From websites to marketing to data insights, everything can feel overwhelming. With proven experience from the UK’s top tech companies, you’ll get clear solutions that actually work.</p>
       
       <div class="hero-ctas">
-        <a href="#audit" class="btn btn-primary">Get a free website audit</a>
+        <a href="#auditmodal" class="btn btn-primary open-audit">Get a free website review</a>
         <a href="#services" class="btn btn-secondary">See services</a>
       </div>
     </div>
@@ -82,7 +83,7 @@
 <!-- Services Section -->
 <section id="services" class="section light">
   <div class="section-inner">
-    <h2>What I can help with...</h2>
+    <h2>What I can help you with...</h2>
     <table class="problems-solutions">
       <thead>
         <tr>
@@ -117,6 +118,7 @@
         </tr>
       </tbody>
     </table>
+    <a href="services.html" class="btn btn-secondary">Find out more</a>
   </div>
 </section>
 
@@ -126,14 +128,14 @@
     🚀 Want to grow online faster?  
     <strong>Get a free website audit + action plan</strong> to boost your business.
   </p>
-  <a href="#contact" class="btn btn-primary">Register for a free audit</a>
+  <a href="#auditmodal" class="btn btn-primary open-audit">Get a free website review</a>
 </div>
 
 
 <!-- Testimonials Section -->
 <section class="section about-section" id="testimonials">
   <div class="section-inner">
-    <h2 style="text-align:center; margin-bottom:2rem;">Results that make a difference</h2>
+    <h2 style="text-align:center; margin-bottom:2rem;">Results that make a real difference</h2>
     <div class="testimonials">
       
       <div class="testimonial-card">
@@ -173,20 +175,45 @@
     <p>&copy; 2025 S7ONE. All rights reserved.</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="close" aria-label="Close Modal">&times;</span>
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST" id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit" class="btn btn-primary">Send</button>
-        <div class="spinner"></div>
-      </form>
-    </div>
+<!-- General Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" aria-label="Close Modal">&times;</span>
+    <h2>Get in touch ✉️</h2>
+
+    <form action="https://formspree.io/f/xrbaybba" method="POST" id="contactForm">
+      <input type="hidden" name="_subject" value="Contact Request from S7ONE Website" />
+
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <input type="phone" name="PhoneNumber" placeholder="Contact Number" required />
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+      <button type="submit" class="btn btn-primary">Send</button>
+      <div class="spinner"></div>
+    </form>
+
+    <div id="form-message" class="form-message" style="display:none;"></div>
   </div>
+</div>
+
+<!-- Free Audit Modal -->
+<div id="auditModal" class="modal">
+  <div class="modal-content">
+    <span class="close" aria-label="Close Modal">&times;</span>
+    <h2>Request a website review</h2>
+    <form action="https://formspree.io/f/xrbaybba" method="POST" id="auditForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <input type="phone" name="phonenumber" placeholder="Contact Number" required />
+      <input type="website" name="website" placeholder="Website link" required />
+      <textarea name="message" placeholder="What is the main purpose of your website?" rows="4" required></textarea>
+      <button type="submit" class="btn btn-primary">Request review</button>
+      <div class="spinner"></div>
+    </form>
+  </div>
+</div>
+
 
   <!-- IMPORTANT: Make sure this filename matches your actual file -->
   <script src="script.js" defer></script>

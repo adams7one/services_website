@@ -1,58 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Services | S7ONE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="styles.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>S7ONE | Digital Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-<header>
-  <nav class="navbar">
-    <!-- Hamburger -->
-    <button class="hamburger" aria-label="Toggle Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <header>
+    <nav class="navbar">
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
 
-    <!-- Logo -->
-    <a href="index.html" class="logo">S7ONE | Digital Services</a>
+      <!-- Logo -->
+      <a href="index.html" class="logo">S7ONE | Digital Services</a>
 
-    <!-- Nav links -->
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about_me.html">About Me</a></li>
-      <li><a href="services.html" class="active" >Services</a></li>
-    </ul>
-  </nav>
-</header>
+      <!-- Nav links -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_me.html">About Me</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="#" class="open-modal">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="section light">
-    <div class="section-inner">
-      <h1>Services</h1>
-      <div class="cards">
-        <div class="card">
-          <h3>Website Creation</h3>
-          <p>Responsive, modern designs with performance and usability in mind.</p>
-        </div>
-        <div class="card">
-          <h3>Website Audits</h3>
-          <p>Detailed reports highlighting improvements for speed, SEO, and accessibility.</p>
-        </div>
-        <div class="card">
-          <h3>Coaching</h3>
-          <p>1:1 coaching sessions to align your digital strategy with your goals.</p>
-        </div>
+  <!-- Intro -->
+  <section class="section hero light">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Practical, Clear & Results-Focused Services</h1>
+        <p>
+          The digital world can be overwhelming — too much jargon, too many options, and not enough clarity.  
+          My approach is simple: no fluff, just practical solutions that make sense for your business.  
+          Every service is designed to give you **clarity, confidence, and measurable results**.
+        </p>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 S7ONE. All rights reserved.</p>
-  </footer>
+  <!-- Services -->
+  <section class="section services-section">
+    <div class="section-inner">
+      <h2>Ways I can help</h2>
+      <div class="services-grid">
 
-  <script src="script.js" defer></script>
+        <div class="service-card">
+          <h3>🚀 Free Website Review & Conversion Boost</h3>
+          <p>
+            A no-cost audit of your website highlighting opportunities to get more from your traffic.  
+            I’ll review the basics of having a performant website and provde practical fixes to improve.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>💻 Website Creation & Redesign</h3>
+          <p>
+            Modern, fast, and mobile-friendly websites built to impress and convert.  
+            Whether you need a fresh build or a full redesign, I’ll make sure your site works as hard as you do.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>📈 Digital Marketing Optimisation</h3>
+          <p>
+            Get more from your ads and campaigns. From Google Ads to social, I’ll cut wasted spend, help you climb google rankings with SEO optimisations,  
+            and help you reach the right people at the right time — without blowing the budget.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>🔗 Website Integrations</h3>
+          <p>
+            Booking systems, online payments, customer forms — I make it all work seamlessly.  
+            No headaches, no messy hacks, just smooth experiences for your customers.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>📊 Simple Reporting & Insights</h3>
+          <p>
+            No more guessing. I’ll set up dashboards and reports that make it easy to see  
+            what’s working, what’s not, and where to focus next.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>🤝 1-on-1 Strategy Sessions</h3>
+          <p>
+            Sometimes you just need someone to cut through the noise.  
+            I offer direct, practical sessions where we can discuss your business challenges and map out a digital strategy that makes sense.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section light cta-section">
+    <div class="section-inner">
+      <h2>Not sure where to start?</h2>
+      <p>
+        Let’s make it easy. Get a free website review, and I’ll highlight quick wins and next steps tailored to your business.
+      </p>
+      <button class="btn btn-secondary open-audit">Get a free website review</button>
+    </div>
+  </section>
+<!-- Free Audit Modal -->
+<div id="auditModal" class="modal">
+  <div class="modal-content">
+    <span class="close" aria-label="Close Modal">&times;</span>
+    <h2>Request a website review</h2>
+    <form action="https://formspree.io/f/xrbaybba" method="POST" id="auditForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <input type="phone" name="phonenumber" placeholder="Contact Number" required />
+      <input type="website" name="website" placeholder="Website link" required />
+      <textarea name="message" placeholder="What is the main purpose of your website?" rows="4" required></textarea>
+      <button type="submit" class="btn btn-primary">Request review</button>
+      <div class="spinner"></div>
+    </form>
+  </div>
+</div>
+  <footer>
+    <p>© 2025 S7ONE Digital Services</p>
+  </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
