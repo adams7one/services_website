@@ -41,6 +41,10 @@ if (contactForm) {
   });
 }
 
-document.getElementById('contactBtnSticky').addEventListener('click', () => {
-  modal.style.display = 'block';
-});
+const stickyBtn = document.getElementById('contactBtnSticky');
+
+if (stickyBtn) {
+  stickyBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+}
