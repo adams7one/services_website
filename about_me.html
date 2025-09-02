@@ -2,31 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Me - s7one</title>
+  <title>About - S7ONE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>s7one</h1>
-    <nav>
+    <div class="logo">S7ONE</div>
+    <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="#" id="openModalNav">Contact</a>
+      <a href="#" id="contactBtn">Contact</a>
     </nav>
   </header>
 
   <main>
     <section>
-      <h2>About Me</h2>
-      <p>Hi, I’m Adam. I help businesses grow with modern websites, performance audits, and coaching. My approach is simple: practical, clear, and focused on results.</p>
+      <h1>About Me</h1>
+      <p>Hi, I’m Adam. I help businesses create beautiful websites, improve online presence, and grow with digital strategies.</p>
     </section>
   </main>
 
+  <button class="cta-button" id="stickyContactBtn">Contact Me</button>
+
+  <!-- Contact Modal (same as index.html) -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+        <label>Name</label>
+        <input type="text" name="name" required>
+        <label>Email</label>
+        <input type="email" name="email" required>
+        <label>Message</label>
+        <textarea name="message" required></textarea>
+        <button type="submit">Send</button>
+        <div class="spinner" id="spinner"></div>
+      </form>
+    </div>
+  </div>
+
   <footer>
-    &copy; 2025 s7one. All rights reserved.
+    &copy; 2025 S7ONE
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

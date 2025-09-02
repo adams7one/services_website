@@ -2,36 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Services - s7one</title>
+  <title>Services - S7ONE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>s7one</h1>
-    <nav>
+    <div class="logo">S7ONE</div>
+    <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="#" id="openModalNav">Contact</a>
+      <a href="services.html">Services</a>
+      <a href="#" id="contactBtn">Contact</a>
     </nav>
   </header>
 
   <main>
     <section>
-      <h2>Services</h2>
-      <ul class="services-list">
-        <li><strong>Website Creation</strong> — Mobile-friendly, modern sites for your business.</li>
-        <li><strong>Website Audits</strong> — Performance, SEO, and UX improvements.</li>
-        <li><strong>Product Coaching</strong> — From idea to launch, I’ll guide your digital products.</li>
-        <li><strong>Business Coaching</strong> — Strategies to grow and scale sustainably.</li>
+      <h1>My Services</h1>
+      <ul>
+        <li>🌐 Website Creation</li>
+        <li>🔍 Website Audits</li>
+        <li>📈 Business & Product Coaching</li>
       </ul>
     </section>
   </main>
 
+  <button class="cta-button" id="stickyContactBtn">Contact Me</button>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+        <label>Name</label>
+        <input type="text" name="name" required>
+        <label>Email</label>
+        <input type="email" name="email" required>
+        <label>Message</label>
+        <textarea name="message" required></textarea>
+        <button type="submit">Send</button>
+        <div class="spinner" id="spinner"></div>
+      </form>
+    </div>
+  </div>
+
   <footer>
-    &copy; 2025 s7one. All rights reserved.
+    &copy; 2025 S7ONE
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

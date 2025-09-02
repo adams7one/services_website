@@ -2,58 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-  <title>s7one - Digital Services</title>
+  <title>Services Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <h1>s7one services</h1>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-    ☰
-    </button>
-    <nav>
-      <a href="index.html" class="active">Home</a>
+    <div class="logo">S7ONE</div>
+    <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="#" id="openModalNav">Contact</a>
+      <a href="#" id="contactBtn">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Grow Your Digital Presence</h2>
-    <p>Websites, audits, and coaching tailored for your business success.</p>
-    <button id="openModalHero" class="cta-btn">Contact Me</button>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Welcome to S7ONE</h1>
+      <p>Your one-stop solution for websites, audits, and business coaching.</p>
+    </section>
+  </main>
 
   <!-- Sticky CTA -->
-  <div class="sticky-cta">
-    <button id="openModalSticky" class="cta-btn">Contact Me</button>
-  </div>
+  <button class="cta-button" id="stickyContactBtn">Contact Me</button>
 
   <!-- Contact Modal -->
-  <div id="contactModal" class="modal">
+  <div class="modal" id="contactModal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Get in Touch</h2>
-      <form action="https://formspree.io/f/mzzbldgo" method="POST" id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="cta-btn">Send</button>
-        <div id="formSpinner" class="spinner hidden"></div>
-        <p id="formStatus"></p>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+        <label>Name</label>
+        <input type="text" name="name" required>
+        <label>Email</label>
+        <input type="email" name="email" required>
+        <label>Message</label>
+        <textarea name="message" required></textarea>
+        <button type="submit">Send</button>
+        <div class="spinner" id="spinner"></div>
       </form>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 s7one. All rights reserved.
+    &copy; 2025 S7ONE
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
