@@ -17,6 +17,7 @@ body {
   line-height: 1.6;
   color: #333;
   background: #fafafa;
+  padding-bottom: 80px; /* match or exceed the sticky container’s height */
 }
 
 /* -------------------
@@ -185,8 +186,8 @@ header {
   justify-content: center;
   border: 2px solid transparent;
   border-radius: 8px;
-  padding: 0.9rem 2rem;     /* Consistent padding */
-  min-height: 48px;         /* Forces equal height */
+  padding: 0.6rem 1.5rem;  /* smaller top/bottom, keep nice side padding */
+  min-height: 44px;        /* slightly shorter minimum height */
   font-size: 1rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
@@ -213,6 +214,11 @@ header {
   background: #f1f5ff;
   color: #0077ff;
   border: 2px solid #0077ff;
+}
+
+@media (min-width: 769px) {
+  .hero-ctas { align-items: center; }          /* don’t stretch to tallest */
+  .hero-ctas .btn-primary { white-space: nowrap; } /* keep on one line */
 }
 
 @media (max-width: 768px) {
@@ -361,12 +367,57 @@ header {
    Footer
 ------------------- */
 footer {
-  text-align: center;
+  background: #111;
+  color: #bbb;
   padding: 2rem;
-  background: #fff;
-  font-size: 0.9rem;
-  color: #666;
 }
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-brand p:first-child {
+  font-weight: bold;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-social a {
+  color: #bbb;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-social a:hover {
+  color: #0a66c2; /* LinkedIn blue */
+}
+
+.footer-social svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+
 
 /* -------------------
    Modal
