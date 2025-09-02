@@ -40,3 +40,7 @@ if (contactForm) {
     spinner.style.display = 'block';
   });
 }
+
+document.getElementById('contactBtnSticky').addEventListener('click', () => {
+  modal.style.display = 'block';
+});
