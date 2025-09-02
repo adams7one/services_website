@@ -1,64 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Services – S7ONE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | S7One</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <button class="menu-toggle" aria-label="Open Menu" aria-controls="navMenu" aria-expanded="false">☰</button>
-    <div class="logo">S7ONE</div>
-    <nav id="navMenu" class="nav-links" aria-hidden="true">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="#" id="contactBtn">Contact</a>
+  <header>
+    <nav class="navbar">
+      <div class="menu-toggle">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="#" id="contactBtn">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="page-section">
-      <h1>My Services</h1>
-      <ul class="services-list">
-        <li><strong>Website Creation</strong> — Modern, responsive sites tailored to your brand.</li>
-        <li><strong>Website Audits</strong> — SEO, performance, and UX improvements with clear actions.</li>
-        <li><strong>Business & Product Coaching</strong> — Strategy, validation, and growth support.</li>
-      </ul>
-    </section>
+  <main class="content">
+    <h1>Services</h1>
+    <ul>
+      <li><strong>Website Creation</strong> – Modern, mobile-friendly websites that convert.</li>
+      <li><strong>Website Audits</strong> – In-depth analysis to improve performance & SEO.</li>
+      <li><strong>Product & Business Coaching</strong> – Strategies to help your business grow.</li>
+    </ul>
   </main>
 
-  <button class="cta-button" id="stickyContactBtn">Contact Me</button>
+  <div class="sticky-cta">
+    <a href="#" id="contactBtnSticky" class="btn">Contact Me</a>
+  </div>
 
-  <!-- Modal (same as index) -->
-  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" style="display:none;">
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
     <div class="modal-content">
-      <button class="close" aria-label="Close modal">&times;</button>
-      <h2 id="contactTitle">Contact Me</h2>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
-        <label>Name</label>
-        <input type="text" name="name" required />
-        <label>Email</label>
-        <input type="email" name="email" required />
-        <label>Message</label>
+      <span class="close">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/yourFormID" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+
+        <label for="message">Message</label>
         <textarea name="message" required></textarea>
 
-        <button type="submit" class="cta-btn">
-          <span class="btn-text">Send</span>
-          <span class="btn-spinner" aria-hidden="true"></span>
-        </button>
-
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <button type="submit">Send</button>
       </form>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 S7ONE
-  </footer>
-
-  <script defer src="script.js?v=3"></script>
+  <script src="script.js"></script>
 </body>
 </html>
