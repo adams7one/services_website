@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Adam's Services Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: #0073e6; color: white; padding: 1.5rem; text-align: center; }
-        nav { background: #f4f4f4; padding: 1rem; text-align: center; }
-        nav a { margin: 0 1rem; color: #0073e6; text-decoration: none; font-weight: bold; }
-        main { padding: 2rem; }
-        footer { background: #222; color: #ccc; text-align: center; padding: 1rem 0; margin-top: 2rem; }
-    </style>
+  <meta charset="UTF-8">
+  <title>s7one - Digital Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Services Website</h1>
-        <p>Your one-stop solution for professional services</p>
-    </header>
+  <!-- Header -->
+  <header>
+    <h1>s7one</h1>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="#" id="openModalNav">Contact</a>
     </nav>
-    <main>
-        <h2>Home</h2>
-        <p>We offer a range of services to meet your needs. Explore our site to learn more about what we can do for you!</p>
-    </main>
-    <footer>
-        &copy; 2025 Services Website. Rights reserved.
-    </footer>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Grow Your Digital Presence</h2>
+    <p>Websites, audits, and coaching tailored for your business success.</p>
+    <button id="openModalHero" class="cta-btn">Contact Me</button>
+  </section>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta">
+    <button id="openModalSticky" class="cta-btn">Contact Me</button>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Get in Touch</h2>
+      <form action="https://formspree.io/f/mzzbldgo" method="POST" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="cta-btn">Send</button>
+        <div id="formSpinner" class="spinner hidden"></div>
+        <p id="formStatus"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 s7one. All rights reserved.
+  </footer>
 </body>
 </html>
