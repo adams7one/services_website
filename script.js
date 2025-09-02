@@ -1,62 +1,31 @@
-// scripts.js
+document.addEventListener("DOMContentLoaded", () => {
+  // ===== Hamburger menu toggle =====
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
 
-(function () {
-  function ready(fn) {
-    if (document.readyState !== 'loading') fn();
-    else document.addEventListener('DOMContentLoaded', fn);
-  }
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
 
-  ready(() => {
-    console.log('scripts.js loaded');
+  // ===== Modal handling =====
+  const modal = document.getElementById("contactModal");
+  const openModalBtns = document.querySelectorAll(".open-modal");
+  const closeModalBtn = document.querySelector(".close");
 
-    const modal = document.getElementById('contactModal');
-    const closeModalBtn = document.querySelector('.close');
-    const navLinks = document.querySelector('.nav-links');
-    const hamburger = document.querySelector('.hamburger');
-
-    // ===== Mobile Menu Toggle =====
-    if (hamburger && navLinks) {
-      hamburger.setAttribute('aria-expanded', 'false');
-      hamburger.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('show');
-        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
-
-    // ===== Open modal via delegation (covers sticky + any .open-modal) =====
-    document.addEventListener('click', (e) => {
-      const openBtn = e.target.closest('.open-modal');
-      if (openBtn && modal) {
-        modal.style.display = 'flex';
-      }
+  openModalBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      modal.style.display = "block";
     });
+  });
 
-    // ===== Close modal =====
-    if (closeModalBtn && modal) {
-      closeModalBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-      });
-    }
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
 
-    // Click outside closes
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
-
-    // Esc closes
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal && modal.style.display !== 'none') {
-        modal.style.display = 'none';
-      }
-    });
-
-    // ===== Spinner on submit =====
-    const contactForm = document.getElementById('contactForm');
-    const spinner = document.querySelector('.spinner');
-    if (contactForm && spinner) {
-      contactForm.addEventListener('submit', () => {
-        spinner.style.display = 'block';
-      });
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
     }
   });
-})();
+});
