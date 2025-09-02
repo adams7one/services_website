@@ -1,37 +1,42 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Burger menu
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
+// Toggle mobile menu
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
   });
+}
 
-  // Modal logic
-  const modal = document.querySelector("#contactModal");
-  const closeModal = document.querySelector(".modal .close");
+// Modal logic
+const modal = document.getElementById('contactModal');
+const openModalBtns = document.querySelectorAll('.open-modal');
+const closeModalBtn = document.querySelector('.close');
 
-  // Multiple contact buttons (nav, hero, sticky)
-  const contactButtons = [
-    document.querySelector("#contactBtn"),
-    document.querySelector("#contactBtnHero"),
-    document.querySelector("#contactBtnSticky")
-  ].filter(Boolean);
-
-  contactButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      modal.style.display = "flex";
-    });
-  });
-
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
+openModalBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modal.style.display = 'flex';
   });
 });
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+}
+
+window.addEventListener('click', e => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Form handling with spinner
+const contactForm = document.getElementById('contactForm');
+const spinner = document.querySelector('.spinner');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    spinner.style.display = 'block';
+  });
+}

@@ -4,97 +4,92 @@
   <meta charset="UTF-8">
   <title>S7ONE | Digital Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header -->
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo">S7ONE</a>
-      <button class="menu-toggle">☰</button>
+      <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about_me.html">About</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about_me.html">About Me</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="#" id="contactBtn">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main -->
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="section-inner">
-        <h1>Unlock Your Digital Potential</h1>
-        <p>Custom websites, audits, and business coaching to help you succeed online.</p>
-        <button class="cta" id="contactBtnHero">Contact Me</button>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Digital Services That Empower Your Business</h1>
+      <p>Websites, audits, and coaching designed to help you grow.</p>
+      <button class="btn open-modal">Contact Me</button>
+    </div>
+  </section>
 
-    <!-- About Preview -->
-    <section class="section light">
-      <div class="section-inner">
-        <h2>About Me</h2>
-        <p>I’m Adam, founder of S7ONE. I help individuals and businesses unlock their digital potential with creative, results-driven solutions.</p>
-        <a href="about_me.html" class="btn">Learn More</a>
-      </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section class="section dark">
-      <div class="section-inner">
-        <h2>What I Offer</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Website Creation</h3>
-            <p>Modern, mobile-friendly websites built with performance in mind.</p>
-          </div>
-          <div class="card">
-            <h3>Website Audits</h3>
-            <p>Comprehensive audits to optimize your website’s performance, SEO, and security.</p>
-          </div>
-          <div class="card">
-            <h3>Coaching</h3>
-            <p>1:1 sessions to help you grow your product, brand, and business.</p>
-          </div>
+  <!-- Services Section -->
+  <section class="section light">
+    <div class="section-inner">
+      <h2>What I Offer</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Website Creation</h3>
+          <p>Modern, mobile-friendly websites tailored to your brand.</p>
         </div>
-        <a href="services.html" class="btn">View All Services</a>
+        <div class="card">
+          <h3>Website Audits</h3>
+          <p>Comprehensive audits to optimize performance and SEO.</p>
+        </div>
+        <div class="card">
+          <h3>Business Coaching</h3>
+          <p>Practical coaching to scale your digital presence effectively.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Testimonials -->
-    <section class="section light">
-      <div class="section-inner">
-        <h2>What Clients Say</h2>
-        <blockquote>"Adam’s coaching and web expertise transformed my business presence online!"</blockquote>
-        <cite>- Happy Client</cite>
-      </div>
-    </section>
-  </main>
+  <!-- About Preview -->
+  <section class="section dark">
+    <div class="section-inner">
+      <h2>About Me</h2>
+      <p>I’m passionate about helping businesses succeed online with clean design, strategy, and modern digital tools.</p>
+      <a href="about_me.html" class="btn">Learn More</a>
+    </div>
+  </section>
 
-  <!-- Footer -->
+  <!-- Contact CTA -->
+  <section class="section light">
+    <div class="section-inner">
+      <h2>Ready to Get Started?</h2>
+      <p>Let’s work together to take your business to the next level.</p>
+      <button class="btn open-modal">Contact Me</button>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 S7ONE. All rights reserved.</p>
   </footer>
+
+  <!-- Sticky CTA -->
+  <button class="cta open-modal">Contact Me</button>
 
   <!-- Modal -->
   <div id="contactModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <label>Email:</label>
-        <input type="email" name="email" required>
-        <label>Message:</label>
-        <textarea name="message" required></textarea>
+      <form action="https://formspree.io/f/your-form-id" method="POST" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
         <button type="submit">Send</button>
-        <div class="spinner" id="spinner"></div>
+        <div class="spinner"></div>
       </form>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
