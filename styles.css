@@ -144,6 +144,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 
@@ -152,7 +153,8 @@ header {
   z-index: 2;
 }
 .hero-photo img {
-  width: 280px;
+  width:100%;
+  max-width: 280px;
   border-radius: 16px;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
   display: block;
@@ -186,17 +188,59 @@ header {
   border-radius: 12px;
   padding: 0.6rem 1rem;   /* slimmer cards */
   text-align: center;
-  width: 100%;
+  width: 100%;}
 
+/* =========================
+   HERO — Mobile (<= 640px)
+   ========================= */
+@media (max-width: 640px) {
+  /* Container: remove forced height and stack cards */
+  .hero .hero-services {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: auto;      /* override the 768px min-height */
+    max-width: 100%;
+    margin-top: 0;
+  }
 
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  hyphens: auto;
+  /* Cards: back to normal flow (no absolute/transform) */
+  .hero .hero-services .service-card,
+  .hero .hero-services .service-card.active,
+  .hero .hero-services .service-card.prev,
+  .hero .hero-services .service-card.next,
+  .hero .hero-services .service-card.hidden {
+    position: static;
+    transform: none;
+    opacity: 1;
+    width: 100%;
+    max-width: 92%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
 
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.35s ease;
+  .hero .hero-services .service-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .hero .hero-services .service-card p {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* Optional: hide dots if all cards are stacked */
+  .hero .service-dots { display: none; }
 }
+
 .hero-services .service-card h3 {
   margin-bottom: 0.3rem;
   font-size: 1rem;
@@ -230,10 +274,12 @@ header {
   z-index: 1;
 }
 .service-dots {
+  position: absolute;
+  top: 7rem;   /* or 50% with transform to center vertically */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  gap: 6px;
-  position: relative;
+  gap: 0.5rem;
   z-index: 5;
 }
 .service-dots button {
