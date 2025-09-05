@@ -33,52 +33,66 @@
   <button class="btn btn-primary open-modal">Get in touch today</button>
 </div>
 
-  <!-- Hero -->
+<!-- HERO with profile image + rotating service cards -->
 <section class="hero">
   <div class="hero-inner">
+
+    <!-- Left: Text -->
     <div class="hero-content">
-      <h1>Make your business work online</h1>
-      <p>From websites to marketing to data insights, everything can feel overwhelming. With proven experience from the UK’s top tech companies, you’ll get clear solutions that actually work.</p>
-      
+      <h1>I help small businesses make their websites actually work.</h1>
+      <p>
+        From web design to SEO and ads, I’ve helped brands like Zoopla, Monzo, and John Lewis Money — 
+        now I bring that experience to small businesses ready to grow.
+      </p>
       <div class="hero-ctas">
-        <button class="btn btn-primary open-audit">Get a free website review</button>
-        <a href="#services" class="btn btn-secondary">See services</a>
+        <button class="btn btn-primary open-audit">Get a Free Website Review</button>
       </div>
     </div>
 
-    <div class="hero-image">
-      <img src="images/hero-illustration.svg" alt="Digital growth illustration">
-    </div>
-  </div>
+    <!-- Right: Photo + Services -->
+    <div class="hero-visual">
+      <div class="hero-visual-inner">
+
+        <!-- ✅ Stack wrapper keeps photo + cards + dots aligned -->
+        <div class="hero-visual-stack">
+
+          <!-- Profile photo -->
+          <div class="hero-photo">
+            <img src="images/profile.png" alt="Adam Stone">
+          </div>
+
+          <!-- Services cards -->
+          <div class="hero-services">
+            <div class="service-card active">
+              <h3>Web Design</h3>
+              <p>Modern, mobile-friendly websites built for conversion.</p>
+            </div>
+            <div class="service-card">
+              <h3>SEO</h3>
+              <p>Get found locally and rank higher on Google.</p>
+            </div>
+            <div class="service-card">
+              <h3>Advertising</h3>
+              <p>Smart campaigns that bring in real customers.</p>
+            </div>
+            <div class="service-card">
+              <h3>Systems</h3>
+              <p>Booking, payments & automations that save you time.</p>
+            </div>
+          </div>
+
+          <!-- Service dots -->
+          <div class="service-dots"></div>
+
+        </div><!-- /.hero-visual-stack -->
+
+      </div><!-- /.hero-visual-inner -->
+    </div><!-- /.hero-visual -->
+
+  </div><!-- /.hero-inner -->
 </section>
 
-<!-- About Preview -->
-<section class="section about-section">
-  <div class="section-inner">
-    <h2>Experience You Can Trust</h2>
-    <div class="about-grid">
-      <!-- Profile Photo -->
-      <div class="about-photo">
-        <img src="images/profile.png" alt="Adam Stone">
-      </div>
 
-      <!-- Bio + Logos -->
-      <div class="about-text">
-        <p>
-          I'm Adam 👋 Over the past decade I’ve worked with some of the UK’s most recognisable digital brands including — Zoopla, Monzo, and John Lewis Money. 
-          From product strategy to data infrastructure, from marketing optimisation to scaling customer-facing websites, I’ve seen what works at scale. 
-          Now I bring that experience to small business owners and ambitious individuals.
-        </p>
-        <div class="company-logos">
-          <img src="images/logo-zoopla.png" alt="Zoopla" />
-          <img src="images/logo-monzo.png" alt="Monzo" />
-          <img src="images/logo-johnlewis.png" alt="John Lewis Money" />
-        </div>
-        <a href="about_me.html" class="btn btn-secondary">Read My Story</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Services Section -->
 <section id="services" class="section light">

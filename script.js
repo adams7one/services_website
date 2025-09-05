@@ -96,12 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
     successMsg: "I’ll review your website and get back to you soon with your free audit."
   });
 
-  // ====== Form handler ======
   function setupForm(form, modal, { successTitle, successMsg }) {
     const spinner = form.querySelector(".spinner");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-
       spinner.style.display = "block";
 
       try {
@@ -114,13 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
         spinner.style.display = "none";
 
         if (response.ok) {
-          // Hide header + form
           const modalContent = modal.querySelector(".modal-content");
           const modalHeader = modalContent.querySelector("h2");
           form.style.display = "none";
           if (modalHeader) modalHeader.style.display = "none";
 
-          // Show confirmation takeover
           const confirmation = document.createElement("div");
           confirmation.className = "confirmation-message";
           confirmation.innerHTML = `
@@ -130,7 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
           `;
           modalContent.appendChild(confirmation);
 
-          // Auto-close modal
           setTimeout(() => {
             confirmation.remove();
             if (modalHeader) modalHeader.style.display = "block";
@@ -141,10 +136,87 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           alert("❌ Oops, something went wrong. Please try again.");
         }
-      } catch (err) {
+      } catch {
         spinner.style.display = "none";
         alert("⚠️ Network error. Please try later.");
       }
     });
+  }
+
+  // ====== HERO SERVICES CARDS ======
+  const hero = document.querySelector(".hero-services");
+  if (hero) {
+    const cards = hero.querySelectorAll(".service-card");
+    let dotsContainer = hero.querySelector(".service-dots");
+
+    if (cards.length <= 1) {
+      if (cards[0]) cards[0].classList.add("active");
+      return;
+    }
+
+    // Ensure only one dots container & no duplicates
+    if (!dotsContainer) {
+      dotsContainer = document.createElement("div");
+      dotsContainer.className = "service-dots";
+      hero.appendChild(dotsContainer);
+    } else {
+      dotsContainer.innerHTML = ""; // ✅ clear any existing dots
+    }
+
+    const dots = [];
+    cards.forEach((_, i) => {
+      const dot = document.createElement("button");
+      if (i === 0) dot.classList.add("active");
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+
+      dot.addEventListener("click", () => {
+        showCard(i);
+        resetInterval();
+      });
+    });
+
+    let current = 0;
+    const ROTATION_MS = 3000;
+    let interval;
+
+    function showCard(index) {
+      cards.forEach(card =>
+        card.classList.remove("active", "prev", "next", "hidden")
+      );
+      dots.forEach(dot => dot.classList.remove("active"));
+
+      current = (index + cards.length) % cards.length;
+      const prev = (current - 1 + cards.length) % cards.length;
+      const next = (current + 1) % cards.length;
+
+      cards[current].classList.add("active");
+      cards[prev].classList.add("prev");
+      cards[next].classList.add("next");
+
+      dots[current].classList.add("active");
+
+      cards.forEach((card, i) => {
+        if (![current, prev, next].includes(i)) {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    function nextCard() {
+      showCard(current + 1);
+    }
+
+    function startInterval() {
+      interval = setInterval(nextCard, ROTATION_MS);
+    }
+
+    function resetInterval() {
+      clearInterval(interval);
+      startInterval();
+    }
+
+    showCard(0);
+    startInterval();
   }
 });
