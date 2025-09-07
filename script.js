@@ -87,64 +87,95 @@ if (hamburger && navLinks) {
     modal.style.display = "none";
     document.body.style.overflow = "";
   }
+// ====== Helpers ======
+function openModal(modal) {
+  if (!modal) return;
+  modal.style.display = "flex";
 
-  // ====== Setup forms (Contact + Audit) ======
-  if (contactForm) setupForm(contactForm, contactModal, {
-    successTitle: "Thanks!",
-    successMsg: "I’ve received your message and will be in touch as soon as I can."
+  // allow transition after a tiny delay
+  requestAnimationFrame(() => {
+    modal.classList.add("open");
   });
 
-  if (auditForm) setupForm(auditForm, auditModal, {
-    successTitle: "Request Received!",
-    successMsg: "I’ll review your website and get back to you soon with your free audit."
-  });
+  document.body.style.overflow = "hidden";
+}
 
-  function setupForm(form, modal, { successTitle, successMsg }) {
-    const spinner = form.querySelector(".spinner");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      spinner.style.display = "block";
+function closeModal(modal) {
+  if (!modal) return;
+  modal.classList.remove("open");
+  modal.classList.add("fade-out");
 
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        });
+  setTimeout(() => {
+    modal.style.display = "none";
+    modal.classList.remove("fade-out");
+    document.body.style.overflow = "";
+  }, 400); // match CSS transition time
+}
 
-        spinner.style.display = "none";
+// ====== Setup forms (Contact + Audit) ======
+if (contactForm) setupForm(contactForm, contactModal, {
+  successTitle: "Thanks!",
+  successMsg: "I’ve received your message and will be in touch as soon as I can."
+});
 
-        if (response.ok) {
-          const modalContent = modal.querySelector(".modal-content");
-          const modalHeader = modalContent.querySelector("h2");
-          form.style.display = "none";
-          if (modalHeader) modalHeader.style.display = "none";
+if (auditForm) setupForm(auditForm, auditModal, {
+  successTitle: "Request Received!",
+  successMsg: "I’ll review your website and get back to you soon with your free audit."
+});
 
-          const confirmation = document.createElement("div");
-          confirmation.className = "confirmation-message";
-          confirmation.innerHTML = `
-            <div class="checkmark">✔</div>
-            <h3>${successTitle}</h3>
-            <p>${successMsg}</p>
-          `;
-          modalContent.appendChild(confirmation);
+function setupForm(form, modal, { successTitle, successMsg }) {
+  const spinner = form.querySelector(".spinner");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    spinner.style.display = "block";
 
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      spinner.style.display = "none";
+
+      if (response.ok) {
+        const modalContent = modal.querySelector(".modal-content");
+        const modalHeader = modalContent.querySelector("h2");
+        form.style.display = "none";
+        if (modalHeader) modalHeader.style.display = "none";
+
+        const confirmation = document.createElement("div");
+        confirmation.className = "confirmation-message";
+        confirmation.innerHTML = `
+          <div class="checkmark">✔</div>
+          <h3>${successTitle}</h3>
+          <p>${successMsg}</p>
+        `;
+        modalContent.appendChild(confirmation);
+
+        // Auto close after showing success
+        setTimeout(() => {
+          closeModal(modal);
+
+          // reset form state after modal closes
           setTimeout(() => {
             confirmation.remove();
             if (modalHeader) modalHeader.style.display = "block";
             form.style.display = "block";
             form.reset();
-            closeModal(modal);
-          }, 4000);
-        } else {
-          alert("❌ Oops, something went wrong. Please try again.");
-        }
-      } catch {
-        spinner.style.display = "none";
-        alert("⚠️ Network error. Please try later.");
+          }, 400); // match fade-out
+        }, 4000);
+      } else {
+        alert("❌ Oops, something went wrong. Please try again.");
       }
-    });
-  }
+    } catch {
+      spinner.style.display = "none";
+      alert("⚠️ Network error. Please try later.");
+    }
+  });
+}
+
+
 
 // ====== HERO SERVICES CARDS ======
 const hero = document.querySelector(".hero-services");
