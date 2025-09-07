@@ -143,80 +143,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ====== HERO SERVICES CARDS ======
-  const hero = document.querySelector(".hero-services");
-  if (hero) {
-    const cards = hero.querySelectorAll(".service-card");
-    let dotsContainer = hero.querySelector(".service-dots");
+// ====== HERO SERVICES CARDS ======
+const hero = document.querySelector(".hero-services");
+if (hero) {
+  const cards = hero.querySelectorAll(".service-card");
 
-    if (cards.length <= 1) {
-      if (cards[0]) cards[0].classList.add("active");
-      return;
-    }
+  if (window.innerWidth >= 769) {
+    // 👉 Desktop: reveal one by one on load
+    cards.forEach((card, i) => {
+      const inner = card.querySelector(".card-inner");
+      card.classList.add("hidden");
+      inner.classList.add("hidden");
 
-    // Ensure only one dots container & no duplicates
-    if (!dotsContainer) {
-      dotsContainer = document.createElement("div");
-      dotsContainer.className = "service-dots";
-      hero.appendChild(dotsContainer);
-    } else {
-      dotsContainer.innerHTML = ""; // ✅ clear any existing dots
-    }
-
-    const dots = [];
-    cards.forEach((_, i) => {
-      const dot = document.createElement("button");
-      if (i === 0) dot.classList.add("active");
-      dotsContainer.appendChild(dot);
-      dots.push(dot);
-
-      dot.addEventListener("click", () => {
-        showCard(i);
-        resetInterval();
-      });
+      setTimeout(() => {
+        card.classList.add("visible");
+        inner.classList.add("visible");
+      }, i * 500); // stagger timing
     });
-
-    let current = 0;
-    const ROTATION_MS = 3000;
-    let interval;
-
-    function showCard(index) {
-      cards.forEach(card =>
-        card.classList.remove("active", "prev", "next", "hidden")
-      );
-      dots.forEach(dot => dot.classList.remove("active"));
-
-      current = (index + cards.length) % cards.length;
-      const prev = (current - 1 + cards.length) % cards.length;
-      const next = (current + 1) % cards.length;
-
-      cards[current].classList.add("active");
-      cards[prev].classList.add("prev");
-      cards[next].classList.add("next");
-
-      dots[current].classList.add("active");
-
-      cards.forEach((card, i) => {
-        if (![current, prev, next].includes(i)) {
-          card.classList.add("hidden");
+  } else {
+    // 👉 Mobile: reveal one by one when scrolled into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const inner = entry.target.querySelector(".card-inner");
+          entry.target.classList.add("visible");
+          inner.classList.add("visible");
+          observer.unobserve(entry.target);
         }
       });
-    }
+    }, { threshold: 0.3 });
 
-    function nextCard() {
-      showCard(current + 1);
-    }
-
-    function startInterval() {
-      interval = setInterval(nextCard, ROTATION_MS);
-    }
-
-    function resetInterval() {
-      clearInterval(interval);
-      startInterval();
-    }
-
-    showCard(0);
-    startInterval();
+    cards.forEach(card => {
+      const inner = card.querySelector(".card-inner");
+      card.classList.add("hidden");
+      inner.classList.add("hidden");
+      observer.observe(card);
+    });
   }
-});
+}
+
+
+  }
+);
+
