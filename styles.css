@@ -39,13 +39,6 @@ header {
   align-items: center;
   padding: 1rem 2rem;
 }
-.logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--color-text);
-}
 .nav-links {
   list-style: none;
   display: flex;
@@ -58,6 +51,24 @@ header {
 }
 .nav-links a.active,
 .nav-links a:hover { color: var(--color-accent-hover); }
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  height: 32px;  /* tweak as needed */
+  width: auto;
+  display: block;
+}
+
+
 .hamburger {
   display: none;
   flex-direction: column;
