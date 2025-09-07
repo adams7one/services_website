@@ -114,7 +114,7 @@ header {
 
 /* ---- Left content ---- */
 .hero-content {
-  flex: 0.65; /* 👈 bigger left side */
+  flex: 0.6; /* 👈 bigger left side */
 }
 
 .hero-top {
@@ -206,7 +206,7 @@ header {
 
 /* ---- Right: Services ---- */
 .hero-services {
-  flex: 0.35; /* 👈 smaller right side */
+  flex: 0.4; /* 👈 smaller right side */
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -248,6 +248,7 @@ header {
 .hero-services .service-card:nth-child(1).visible { transition-delay: 0.1s; }
 .hero-services .service-card:nth-child(2).visible { transition-delay: 0.3s; }
 .hero-services .service-card:nth-child(3).visible { transition-delay: 0.5s; }
+.hero-services .service-card:nth-child(4).visible { transition-delay: 0.7s; }
 
 
 /* ===========================
@@ -450,47 +451,50 @@ header {
   .company-logos { flex-direction: column; gap: 1.5rem; }
 }
 
-/* -------------------
-   Free Website Audit Banner
-------------------- */
+/* ===========================
+   Free Audit Banner
+=========================== */
 .audit-banner {
   width: 100%;
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
   color: var(--color-white);
-  padding: 1.5rem 2rem;
+  padding: 2.5rem 1rem;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  font-size: 1.15rem;
-  font-weight: 600;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  border-radius: 0; /* full-width strip, no rounded edges */
+  gap: 1.25rem;
 }
 
 .audit-banner p {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  line-height: 1.6;
 }
 
+/* Ensure button wraps text naturally */
 .audit-banner .btn {
-  background: var(--color-white);
-  color: var(--color-accent);
-  border: 2px solid var(--color-white);
+  display: inline-block;
+  width: auto;
+  white-space: nowrap;
+  padding: 0.75rem 1.5rem;
 }
 
-.audit-banner .btn:hover {
-  background: transparent;
-  color: var(--color-white);
-  border-color: var(--color-white);
+/* Override secondary button styling inside banner */
+.audit-banner .btn.btn-secondary {
+  background: var(--color-white);   /* white button */
+  color: var(--color-accent);       /* accent text */
+  border: none;
+  border-radius: 50px;              /* pill-like button */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-weight: 600;
 }
 
-/* Mobile tweaks */
-@media (max-width: 768px) {
-  .audit-banner {
-    font-size: 1rem;
-    padding: 1rem;
-  }
+.audit-banner .btn.btn-secondary:hover {
+  background: var(--color-background-alt); /* light grey hover */
+  color: var(--color-accent-hover);
 }
 
 
