@@ -148,38 +148,52 @@ const hero = document.querySelector(".hero-services");
 if (hero) {
   const cards = hero.querySelectorAll(".service-card");
 
-  if (window.innerWidth >= 769) {
-    // 👉 Desktop: reveal one by one on load
-    cards.forEach((card, i) => {
-      const inner = card.querySelector(".card-inner");
-      card.classList.add("hidden");
-      inner.classList.add("hidden");
+  // Reset any stray classes from SSR/markup
+  cards.forEach(card => {
+    card.classList.remove("hidden", "visible");
+  });
 
+  if (window.innerWidth >= 769) {
+    // Desktop: reveal one by one on load
+    cards.forEach((card, i) => {
+      card.classList.add("hidden");
       setTimeout(() => {
         card.classList.add("visible");
-        inner.classList.add("visible");
-      }, i * 500); // stagger timing
+      }, i * 500); // stagger desktop
     });
   } else {
-    // 👉 Mobile: reveal one by one when scrolled into view
+    // Mobile: reveal sequentially as you scroll
+    let nextToReveal = 0;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const inner = entry.target.querySelector(".card-inner");
+        if (entry.isIntersecting && entry.target === cards[nextToReveal]) {
           entry.target.classList.add("visible");
-          inner.classList.add("visible");
           observer.unobserve(entry.target);
+          nextToReveal++; // only allow the next card once the previous has revealed
         }
       });
     }, { threshold: 0.3 });
 
     cards.forEach(card => {
-      const inner = card.querySelector(".card-inner");
       card.classList.add("hidden");
-      inner.classList.add("hidden");
       observer.observe(card);
     });
   }
+}
+
+
+
+
+// Pause logo carousel on hover
+const logoTrack = document.querySelector(".logo-track");
+if (logoTrack) {
+  logoTrack.addEventListener("mouseenter", () => {
+    logoTrack.style.animationPlayState = "paused";
+  });
+  logoTrack.addEventListener("mouseleave", () => {
+    logoTrack.style.animationPlayState = "running";
+  });
 }
 
 

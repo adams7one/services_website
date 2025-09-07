@@ -42,22 +42,44 @@
   <button class="btn btn-primary open-modal">Get in touch today</button>
 </div>
 
-<section class="hero">
+<section class="hero section-wave">
   <div class="hero-inner">
 
-    <!-- Left: Text -->
+    <!-- Left: Photo + Text -->
     <div class="hero-content">
-      <h1>I help small businesses make their websites actually work.</h1>
-      <p>
-        From web design to SEO and ads, I’ve helped brands like Zoopla, Monzo, and John Lewis Money — 
-        now I bring that experience to small businesses ready to grow.
-      </p>
 
-      <!-- Logos -->
+      <div class="hero-top">
+        <!-- Profile photo -->
+        <div class="hero-photo">
+          <img src="images/profile.png" alt="Adam Stone">
+        </div>
+
+        <!-- Heading + Subcopy -->
+        <div class="hero-text">
+          <h1 class="heading-gradient">
+            I help local businesses work online.
+          </h1>
+          <p>
+            From web design to SEO and ads, I’ve helped brands like Zoopla, Monzo, and John Lewis Money — 
+            now I bring that experience to small businesses ready to grow.
+          </p>
+        </div>
+      </div><!-- /.hero-top -->
+
+      <!-- Logos + CTA (unaffected by photo) -->
       <div class="hero-logos">
-        <img src="images/logo-zoopla.png" alt="Zoopla">
-        <img src="images/logo-monzo.png" alt="Monzo">
-        <img src="images/logo-johnlewis.png" alt="John Lewis Money">
+        <p class="text-muted">Experience working with</p>
+        <div class="logo-carousel">
+          <div class="logo-track">
+            <img src="images/logo-monzo.png" alt="Monzo">
+            <img src="images/logo-zoopla.png" alt="Zoopla">
+            <img src="images/logo-johnlewis.png" alt="John Lewis Money">
+            <!-- Duplicate logos for seamless loop -->
+            <img src="images/logo-monzo.png" alt="Monzo">
+            <img src="images/logo-zoopla.png" alt="Zoopla">
+            <img src="images/logo-johnlewis.png" alt="John Lewis Money">
+          </div>
+        </div>
       </div>
 
       <div class="hero-ctas">
@@ -65,54 +87,24 @@
       </div>
     </div>
 
-    <!-- Right: Photo + Services -->
-    <div class="hero-visual">
-      <div class="hero-visual-inner">
-        <div class="hero-visual-stack">
-
-          <!-- Profile photo -->
-          <div class="hero-photo">
-            <img src="images/profile.png" alt="Adam Stone">
-          </div>
-
-          <!-- Services cards -->
-          <div class="hero-services">
-            <div class="service-card">
-              <div class="card-inner">
-                <h3>Web Design</h3>
-                <p>Modern, mobile-friendly websites built for conversion.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <div class="card-inner">
-                <h3>SEO</h3>
-                <p>Get found locally and rank higher on Google.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <div class="card-inner">
-                <h3>Advertising</h3>
-                <p>Smart campaigns that bring in real customers.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <div class="card-inner">
-                <h3>Systems</h3>
-                <p>Booking, payments & automations that save you time.</p>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /.hero-visual-stack -->
+    <!-- Right: Services -->
+    <div class="hero-services">
+      <div class="service-card">
+        <h3>Web Design</h3>
+        <p>Modern, mobile-friendly websites built for conversion.</p>
+      </div>
+      <div class="service-card">
+        <h3>SEO</h3>
+        <p>Get found locally and rank higher on Google.</p>
+      </div>
+      <div class="service-card">
+        <h3>Advertising</h3>
+        <p>Smart campaigns that bring in real customers.</p>
       </div>
     </div>
 
   </div><!-- /.hero-inner -->
 </section>
-
-
-
-
 
 <!-- Services Section -->
 <section id="services" class="section light">
@@ -127,34 +119,75 @@
       </thead>
       <tbody>
         <tr>
-          <td data-label="Problem"> Website looks outdated or isn’t mobile-friendly</td>
-          <td data-label="Solution"> A modern, fast, and mobile-friendly website that works seamlessly across devices</td>
+          <td data-label="Problem">
+            <i data-lucide="screen-share-off" class="icon problem-icon"></i>
+            Website looks outdated or isn’t mobile-friendly
+          </td>
+          <td data-label="Solution">
+            <i data-lucide="monitor-smartphone" class="icon solution-icon"></i>
+            A modern, fast, and mobile-friendly website that works seamlessly across devices
+          </td>
         </tr>
         <tr>
-          <td data-label="Problem"> Not showing up on Google searches</td>
-          <td data-label="Solution">SEO improvements that help your business get found by local customers</td>
+          <td data-label="Problem">
+            <i data-lucide="search-x" class="icon problem-icon"></i>
+            Not showing up on Google searches
+          </td>
+          <td data-label="Solution">
+            <i data-lucide="search-check" class="icon solution-icon"></i>
+            SEO improvements that help your business get found by local customers
+          </td>
         </tr>
         <tr>
-          <td data-label="Problem"> Need to take bookings or payments online</td>
-          <td data-label="Solution">Simple, secure booking and payment systems integrated into your site</td>
+          <td data-label="Problem">
+            <i data-lucide="credit-card" class="icon problem-icon"></i>
+            Need to take bookings or payments online
+          </td>
+          <td data-label="Solution">
+            <i data-lucide="calendar-check-2" class="icon solution-icon"></i>
+            Simple, secure booking and payment systems integrated into your site
+          </td>
         </tr>
         <tr>
-          <td data-label="Problem"> Advertising spend isn’t bringing results</td>
-          <td data-label="Solution">Optimised paid ads campaigns designed to bring in new customers cost-effectively</td>
+          <td data-label="Problem">
+            <i data-lucide="ban" class="icon problem-icon"></i>
+            Advertising spend isn’t bringing results
+          </td>
+          <td data-label="Solution">
+            <i data-lucide="trending-up" class="icon solution-icon"></i>
+            Optimised paid ads campaigns designed to bring in new customers cost-effectively
+          </td>
         </tr>
         <tr>
-          <td data-label="Problem"> No clear view of how the business is performing online</td>
-          <td data-label="Solution">Simple dashboards and reports that make it easy to track sales and customer activity</td>
+          <td data-label="Problem">
+            <i data-lucide="help-circle" class="icon problem-icon"></i>
+            No clear view of how the business is performing online
+          </td>
+          <td data-label="Solution">
+            <i data-lucide="bar-chart-3" class="icon solution-icon"></i>
+            Simple dashboards and reports that make it easy to track sales and customer activity
+          </td>
         </tr>
         <tr>
-          <td data-label="Problem"> Unsure how to grow digital skills</td>
-          <td data-label="Solution">1-on-1 mentorship and coaching to build confidence and improve digital know-how</td>
+          <td data-label="Problem">
+            <i data-lucide="book-x" class="icon problem-icon"></i>
+            Unsure how to grow digital skills
+          </td>
+          <td data-label="Solution">
+            <i data-lucide="graduation-cap" class="icon solution-icon"></i>
+            1-on-1 mentorship and coaching to build confidence and improve digital know-how
+          </td>
         </tr>
       </tbody>
     </table>
     <a href="services.html" class="btn btn-secondary">Find out more</a>
   </div>
 </section>
+
+<script>
+  lucide.createIcons();
+</script>
+
 
 <!-- Free Audit Banner -->
 <div id="audit" class="audit-banner">
@@ -175,7 +208,7 @@
       <div class="testimonial-card">
         <span class="quote-mark">“</span>
         <p><em>Working with you completely transformed our online store. Our coffee bean sales are up, and customers keep telling us how much easier it is to shop now.</em></p>
-        <h4>— Sarah, Local Coffee Roasters</h4>
+        <h4>— Sarah, Local Coffee Shop</h4>
       </div>
 
       <div class="testimonial-card">
@@ -247,6 +280,18 @@
 
   <!-- IMPORTANT: Make sure this filename matches your actual file -->
   <script src="script.js" defer></script>
+
+<!-- put this near the end of your page, AFTER your markup and AFTER script.js -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  // make sure we only call this once, after Lucide is available and DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide && typeof lucide.createIcons === 'function') {
+      lucide.createIcons();
+    }
+  });
+</script>
+
 </body>
 
 <footer>
