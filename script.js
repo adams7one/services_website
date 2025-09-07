@@ -14,31 +14,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const auditForm = document.getElementById("auditForm");
 
   // ====== Mobile nav toggle ======
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      hamburger.classList.toggle("active");
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+    document.body.classList.toggle("menu-open"); // lock/unlock scroll
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const isContact = link.classList.contains("open-modal");
+      const isAudit = link.classList.contains("open-audit");
+
+      if (isContact) {
+        e.preventDefault();
+        openModal(contactModal);
+      }
+      if (isAudit) {
+        e.preventDefault();
+        openModal(auditModal);
+      }
+
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("active");
+      document.body.classList.remove("menu-open"); // restore scroll
     });
+  });
+}
 
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", (e) => {
-        const isContact = link.classList.contains("open-modal");
-        const isAudit = link.classList.contains("open-audit");
-
-        if (isContact) {
-          e.preventDefault();
-          openModal(contactModal);
-        }
-        if (isAudit) {
-          e.preventDefault();
-          openModal(auditModal);
-        }
-
-        navLinks.classList.remove("active");
-        hamburger.classList.remove("active");
-      });
-    });
-  }
 
   // ====== Open modal triggers ======
   document.querySelectorAll(".open-modal").forEach(btn => {
