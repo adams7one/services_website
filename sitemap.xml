@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://s7one.co</loc>
+    <loc>https://s7one.co/</loc>
     <lastmod>2025-09-14</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://s7one.co/about_me</loc>
+    <loc>https://s7one.co/about_me/</loc>
     <lastmod>2025-09-14</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://s7one.co/services</loc>
+    <loc>https://s7one.co/services/</loc>
     <lastmod>2025-09-14</lastmod>
     <priority>0.80</priority>
   </url>
